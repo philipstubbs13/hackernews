@@ -14,12 +14,6 @@ const PARAM_HPP = 'hitsPerPage=';
 // const url = `${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}&${PARAM_PAGE}`;
 // console.log(url);
 
-// Define higher-order function outside of App component.
-// Takes the searchTerm and returns another function.
-const isSearched = searchTerm => item => 
-    // some condition wich returns true or false.
-    item.title.toLowerCase().includes(searchTerm.toLowerCase());
-
 class App extends Component {
   _isMounted = false;
 
@@ -28,7 +22,7 @@ class App extends Component {
 
     this.state = {
       searchTerm: DEFAULT_QUERY,
-      result: null,
+      results: null,
       searchKey: '',
       error: null,
     };
@@ -171,8 +165,8 @@ const Search = ({
   onSubmit,
   children 
 }) =>
-  <form>
-    {children} <input 
+  <form onSubmit={onSubmit}>
+    <input 
       type="text"
       value={value}
       onChange={onChange} 
