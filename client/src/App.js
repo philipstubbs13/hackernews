@@ -155,14 +155,11 @@ class App extends Component {
           />
         }
         <div className="interactions">
-          { isLoading 
-            ? <Loading />
-            : <Button 
-              onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}
-              >
-                More
-              </Button>
-          }
+          <ButtonWithLoading
+            isLoading={isLoading} 
+            onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
+            Load More Articles
+          </ButtonWithLoading>
         </div>
       </div>
     );
@@ -236,7 +233,7 @@ const Table = ({ list, onDismiss }) =>
 const Button = ({ 
   onClick, 
   className = '',
-  children 
+  children,
 }) =>
   <button
     onClick={onClick}
@@ -258,6 +255,16 @@ Button.defaultProps = {
 
 const Loading = () =>
   <div><h2><i class="fas fa-spinner"></i> Loading articles...</h2></div>
+
+// Higher Order Component(HOC)
+// Convention is to prefix the naming of a HOC with "with".
+const withLoading = (Component) => ({ isLoading, ...rest }) =>
+  isLoading
+    ? <Loading />
+    : <Component { ...rest } />
+
+const ButtonWithLoading = withLoading(Button);
+  
 
 export default App;
 
