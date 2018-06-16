@@ -96,10 +96,11 @@ The first step is to clone the project repository to a local directory on your c
 * <b>public</b>: The public folder contains the index.html file. This HTML file is a template. The file is empty. So, if you open it directly in a browser, you will get an empty page. Rather than placing the HTML code directly in index.html, this app uses a React component-based architecture to create, build, and render UI components to the page. This folder also contains the favicon that is displayed on the browser tab.
 * <b>readme_images</b>: Contains the screenshots that are used in the project README file.
 * <b>src</b>: The src folder is where the React app components reside.
+    * <b>_snapshots_</b>: When you run the snapshot tests in the <b>App.test.js</b> file, Jest stores the snapshots in this folder so that it can validate the diff against a future snapshot. Additionally, the snapshots can be easily shared by having them in one folder. For more information about testing, see [Running tests](#tests).
     * <b>index.js</b>: The index.js file is the top level file of the React app. In index.js, the App.js file is imported, and the ReactDOM.render method is used to render App.js to the page.
     * <b>App.js</b>: The App.js file is where the React components are defined and rendered and where the routes are set up. This file also contains the axios request to grab Hacker News articles from the Hacker News site using the HackerNews API.
     * <b>App.css</b> and <b>index.css</b>: The external css stylesheets for the app.
-    * <b>App.test.js</b>: Contains snapshot tests.
+    * <b>App.test.js</b>: Contains snapshot tests and unit tests. For more information about testing, see [Running tests](#tests).
 * <b>package.json</b>: Lists the project dependencies and their version numbers. It also contains various scripts to start the server, create a production build, and run tests.
 * <b>yarn.lock</b>: Dependency tree for the project. Lists all the dependencies and their versions.
 * <b>.gitignore</b>: Anything listed inside this file (for example, node_modules) will not be tracked by GitHub or Heroku when code is committed.
@@ -180,7 +181,7 @@ Snapshot tests ensure that the component doesn't change its output. Once it chan
 
 Read more about testing React apps with Jest [here](https://facebook.github.io/jest/docs/en/tutorial-react.html).
 
-### <a name="snapshot-tests"></a> Unit tests with Enzyme
+### <a name="unit-tests"></a> Unit tests with Enzyme
 
 The second type of tests are unit tests with Enzyme. Enzyme is a testing utility by Airbnb to assert, manipulate, and traverse React components. It is used to conduct unit tests to complement snapshot tests in React.
 
