@@ -12,6 +12,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 * [Screenshots](#screenshots)
 * [About this project](#about-this-project)
 * [Getting started](#getting-started)
+* [Running tests](#tests)
 * [Deployment](#react-deployment)
 * [Technologies used to create app](#technologies-used)
 * [Direction for future development](#future)
@@ -98,6 +99,7 @@ The first step is to clone the project repository to a local directory on your c
     * <b>index.js</b>: The index.js file is the top level file of the React app. In index.js, the App.js file is imported, and the ReactDOM.render method is used to render App.js to the page.
     * <b>App.js</b>: The App.js file is where the React components are defined and rendered and where the routes are set up. This file also contains the axios request to grab Hacker News articles from the Hacker News site using the HackerNews API.
     * <b>App.css</b> and <b>index.css</b>: The external css stylesheets for the app.
+    * <b>App.test.js</b>: Contains snapshot tests.
 * <b>package.json</b>: Lists the project dependencies and their version numbers. It also contains various scripts to start the server, create a production build, and run tests.
 * <b>yarn.lock</b>: Dependency tree for the project. Lists all the dependencies and their versions.
 * <b>.gitignore</b>: Anything listed inside this file (for example, node_modules) will not be tracked by GitHub or Heroku when code is committed.
@@ -155,6 +157,35 @@ yarn start
 <p>After the development server has started, a Chrome browser window should open, and you should see the application. If the browser does not automatically open after the server starts, you can verify that the application is working locally on your computer by manually opening Chrome and going to <a href="http://localhost:3000">http://localhost:3000</a>.</p>
 
 <p><b>Tip</b>: If you are still unable to see the application in the browser at <a href="http://localhost:3000">http://localhost:3000</a>, ensure that no other applications/processes are using port 3000. If port 3000 is in use by another process, kill that process and then restart the server.</p>
+
+## <a name="tests"></a> Running tests
+
+Testing keeps the quality of code high and provides assurance that everything works. The tests for this project are located in the <b>src/App.test.js</b> file.
+
+To run the tests, run the following command from the project root directory (hackernews):
+<pre>npm test</pre>
+
+In the <b>src/App.test.js</b> file, you will find two types of React component tests.
+
+* [Snapshot tests with Jest](#snapshot-tests)
+* [Unit tests with Enzyme](#unit-tests)
+
+### <a name="snapshot-tests"></a> Snapshot tests with Jest
+
+The first type of tests are snapshot tests. Snapshot tests use Jest, which is a JavaScript testing framework that is used at Facebook. create-react-app already comes with Jest, so no need to worry about setting it up. 
+
+These types of tests make a snapshot of the rendered component and run this snapshot against future snapshots. When a future snapshot changes, you will get notified in the test. You can either accept the snapshot change or deny the change.
+
+Snapshot tests ensure that the component doesn't change its output. Once it changes the output, you have to decide if you accept the changes.
+
+Read more about testing React apps with Jest [here](https://facebook.github.io/jest/docs/en/tutorial-react.html).
+
+### <a name="snapshot-tests"></a> Unit tests with Enzyme
+
+The second type of tests are unit tests with Enzyme. Enzyme is a testing utility by Airbnb to assert, manipulate, and traverse React components. It is used to conduct unit tests to complement snapshot tests in React.
+
+Read more about Enzyme [here](https://github.com/airbnb/enzyme).
+
 
 ## <a name="react-deployment"></a> Deployment
 
