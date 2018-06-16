@@ -38,6 +38,14 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ### <a name="how-app-works"></a> How the app works
 
+When you navigate to the app home page, the app will automatically load articles from the [Hacker News site](https://news.ycombinator.com/). Specifically, the app is set up to load articles about Redux by default. However, if you wanted to see articles for a different topic (for example, React), just enter the topic in the <b>Search</b> box at the top of the page and click <b>Search</b>. 
+
+The app displays the title, author, number of comments, and number of points for each article. If you want to actually read a article, simply click the title of the article. The article title is an external link, which takes you away from the app and to the site where the article is located. After you read an article, you can click <b>Dismiss</b>, which removes that article from the page.
+
+If you run out of articles to read on a certain topic or don't see what you are looking for, click <b>Load More Articles</b> at the bottom of the page to get access to even more articles!
+
+And, that's pretty much it. It's pretty simple to use, and it was fun to create. I plan to add more cool, interesting features to the app soon. So, stay tuned...
+
 
 ### <a name="how-the-app-is-built"></a> How the app is built
 
@@ -198,6 +206,8 @@ The following is a list of potential enhancements for future code development.
 * Update css/styling  of app.
 
 * Modularize React components into separate files for future reuse and better code readability.
+
+* Add ESLint to help clean up code.
 
 ## <a name ="Issues"></a> Issues
 
