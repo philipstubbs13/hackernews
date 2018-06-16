@@ -158,27 +158,7 @@ yarn start
 
 ## <a name="react-deployment"></a> Deployment
 
-This app is deployed to Heroku. To deploy the app, you will need to build a production version of the app as well as have Heroku CLI installed.
-
-1. Download and install the Heroku CLI. You can install the Heroku CLI <a href="https://devcenter.heroku.com/articles/heroku-cli">here</a>.</p>
-
-2. If you haven't already, log in to your Heroku account and follow the prompts to create a new SSH public key.
-<pre>heroku login</pre>
-
-3. Change directory to the project root directory (<b>NYT-React-Search</b>).
-
-4. If you have deployed the app before, delete the <b>NYT-React-Search/client/build</b> folder.
-
-5. Run the following command to build a clean production version of the app.
-<pre>yarn build</pre>
-<p>This command creates a folder called <b>build</b> inside of the <b>client</b> folder. </p>
-
-6. Deploy your changes
-<pre>
-git add .
-git commit -am "heroku commit message"
-git push heroku master
-</pre>
+This app is deployed to Heroku. If you would like to deploy to heroku, see [Deploying React with Zero Configuration](https://blog.heroku.com/deploying-react-with-zero-configuration).
 
 <p>If you run into any issues with deploying the app to Heroku, run the following command in the project root directory to see the Heroku logs.</p>
 <pre>heroku logs</pre>
