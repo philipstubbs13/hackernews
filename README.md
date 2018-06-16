@@ -23,7 +23,13 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## <a name="screenshots"></a> Screenshots
 
+### App home page
+
 <img src="readme_images/hackernews.png">
+
+### Hacker News site (https://news.ycombinator.com/)
+
+<img src="readme_images/hackernewssite.png">
 
 ## <a name="about-this-project"></a> About this project
 
@@ -61,9 +67,7 @@ To set up this application locally on your computer, perform the following steps
 
 4. [Install the dependencies](#dependencies)
 
-5. [Install MongoDB](#install-mongo)
-
-6. [Start the React development server](#start-server)
+5. [Start the React development server](#start-server)
 
 
 ### <a name="clone-repository"></a> 1. Clone the repository
@@ -87,7 +91,7 @@ The first step is to clone the project repository to a local directory on your c
     * <b>App.js</b>: The App.js file is where the React components are defined and rendered and where the routes are set up. This file also contains the axios request to grab Hacker News articles from the Hacker News site using the HackerNews API.
     * <b>App.css</b> and <b>index.css</b>: The external css stylesheets for the app.
 * <b>package.json</b>: Lists the project dependencies and their version numbers. It also contains various scripts to start the server, create a production build, and run tests.
-* <b>yarn.lock</b>: Dependency tree for the project. Lists all the client dependencies and their versions.
+* <b>yarn.lock</b>: Dependency tree for the project. Lists all the dependencies and their versions.
 * <b>.gitignore</b>: Anything listed inside this file (for example, node_modules) will not be tracked by GitHub or Heroku when code is committed.
 
 ### <a name="install-node"></a> 2. Install Node.js
@@ -120,7 +124,15 @@ For more information about yarn and other installation options, see the yarn doc
   <li><b>react-test-renderer</b> -  this package makes it easy to grab a snapshot of the "DOM tree" rendered by a React DOM component without using a browser or jsdom. (https://www.npmjs.com/package/react-test-renderer)</li>
 </ul>
 
-<p>Version information for each of these packages is available in the <b>package.json</b> file in the project root directory and in the <b>client</b> directory.</p>
+<p>In addition, the following packages are development dependencies. Enzyme is a JavaScript testing utility for React that makes it easier to assert, manipulate, and traverse React Components' output.</p>
+
+<ul>
+    <li><b>enzyme</b></li>
+    <li><b>enzyme-adapter-react-16</b></li>
+    <li><b>react-addons-test-utils</b></li>
+</ul>
+
+<p>Version information for each of these packages is available in the <b>package.json</b> file in the project root directory.</p>
 
 <p>After you clone the repository to a local directory, change directory to the project root directory and run the following command to install the required packages:</p>
 <pre>yarn install</pre>
@@ -184,6 +196,8 @@ The following is a list of potential enhancements for future code development.
 * Add feature that allows users to leave comments on saved articles.
 
 * Update css/styling  of app.
+
+* Modularize React components into separate files for future reuse and better code readability.
 
 ## <a name ="Issues"></a> Issues
 
