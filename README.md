@@ -20,7 +20,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## <a name="live"></a>Live
 
-<https://hacker-newz.herokuapp.com/>
+<https://hacker-newz.firebaseapp.com/>
 
 ## <a name="screenshots"></a> Screenshots
 
@@ -64,7 +64,7 @@ The app also uses the HackerNews API to retrieve computer science and tech-relat
 
 The following section will take you through the steps of setting up this application and getting it running locally on your computer.
 
-If you don't want to set up this project locally and just want to see the deployed application, go to <https://hacker-newz.herokuapp.com/>.
+If you don't want to set up this project locally and just want to see the deployed application, go to <https://hacker-newz.firebaseapp.com/>.
 
 To set up this application locally on your computer, perform the following steps:
 
